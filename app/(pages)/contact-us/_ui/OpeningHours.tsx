@@ -1,4 +1,4 @@
-import type { DayKey, OpeningHours } from "@/app/_lib/org/orgPages/contactUs";
+import type { DayKey, OpeningHours } from "@/app/_lib/org/definitions";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
 
@@ -33,7 +33,9 @@ export default function OpeningHours({
 
           return (
             <div key={day} className="flex items-center justify-between gap-4">
-              <P className=" text-gray-700" size="sm">{DAY_LABELS[day]}</P>
+              <P className=" text-gray-700" size="sm">
+                {DAY_LABELS[day]}
+              </P>
 
               <P className=" text-gray-700" size="sm">
                 {h.closed ? "Closed" : `${h.open} – ${h.close}`}

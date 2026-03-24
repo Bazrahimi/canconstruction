@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
-import type { TeamSection, TeamMember } from "@/app/_lib/org/orgPages/aboutUs";
+import Image from "next/image";
+import type { TeamMember, TeamSection } from "@/app/_lib/org/definitions";
 
 function Avatar({ member }: { member: TeamMember }) {
   const hasImage = !!member.image;
