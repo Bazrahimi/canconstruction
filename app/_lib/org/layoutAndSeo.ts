@@ -1,0 +1,189 @@
+// app/_lib/org/layoutAndSeo.ts
+import type { Metadata, Viewport } from "next";
+import { PublicRoutes } from "../routes/publicRoutes";
+import { getHomeServiceKeywords } from "./category/serviceLookup";
+import { getBaseUrl, ORG_PROFILE as op } from "./profile";
+import { publicAssets } from "./publicAssets";
+import { SERVICE_AREA } from "./serviceArea";
+
+import type { PageSeo, RootSeoConfig } from "../definitions";
+import { ORG_SEO } from "./seo";
+
+export function absoluteUrl(path: string): string {
+  // If already a full URL, return it unchanged
+  if (path.startsWith("http://") || path.startsWith("https://")) {
+    return path;
+  }
+
+  // Otherwise build absolute URL from your site base URL
+  return new URL(path, getBaseUrl()).toString();
+}
+
+export const ROOT_SEO: RootSeoConfig = {
+  siteName: op.orgName,
+  manifestPath: "/manifest.webmanifest",
+  icons: {
+    icon: publicAssets.icons.icon,
+    apple: publicAssets.icons.apple,
+  },
+  defaultOgImagePath: publicAssets.images.ogImage,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: op.primaryColor,
+};
+
+/**
+ * Build consistent metadata for any page.
+ * Use this inside:
+ * - app/layout.tsx  (global defaults)
+ * - app/page.tsx, app/about-us/page.tsx, app/contact-us/page.tsx (page overrides)
+ */
+export function buildMetadata(page: PageSeo): Metadata {
+  const canonical = absoluteUrl(page.canonicalPathname);
+  const ogImage = absoluteUrl(page.ogImagePath ?? ROOT_SEO.defaultOgImagePath);
+
+  return {
+    metadataBase: new URL(getBaseUrl()),
+
+    title: page.title,
+
+    // Page-level title/description
+    // (In App Router: this merges nicely with template)
+    description: page.description,
+
+    alternates: { canonical },
+
+    manifest: ROOT_SEO.manifestPath,
+    icons: ROOT_SEO.icons,
+
+    // Robots:
+    // - Keep defaults index/follow
+    // - allow page.noindex to override
+    robots: page.noindex
+      ? {
+          index: false,
+          follow: false,
+          googleBot: { index: false, follow: false },
+        }
+      : ROOT_SEO.robots,
+
+    keywords: page.keywords,
+
+    openGraph: {
+      type: "website",
+      siteName: ROOT_SEO.siteName,
+      url: canonical,
+      title: page.title,
+      description: page.description,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${ROOT_SEO.siteName} preview`,
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: page.title,
+      description: page.description,
+      images: [ogImage],
+    },
+
+    // Optional niceties for small biz:
+    other: {
+      // prevents iOS auto-detecting phone numbers into blue links
+      "format-detection": "telephone=no",
+    },
+  };
+}
+
+/**
+ * A tiny helper to create per-page SEO objects quickly.
+ * (Just avoids repeating op/orgName everywhere.)
+ */
+export function seoPage(
+  input: Omit<PageSeo, "title" | "description"> &
+    Partial<Pick<PageSeo, "title" | "description">>,
+): PageSeo {
+  return {
+    title: input.title ?? op.orgName,
+    description: input.description ?? op.description,
+    canonicalPathname: input.canonicalPathname,
+    ogImagePath: input.ogImagePath,
+    keywords: input.keywords,
+    noindex: input.noindex,
+  };
+}
+
+const locationKeywords = [
+  SERVICE_AREA.primaryRegion,
+  SERVICE_AREA.state,
+  SERVICE_AREA.country,
+];
+
+// Central, reuseable SEO configs
+export const SEO_PAGES = {
+  home: (): PageSeo => ({
+    canonicalPathname: PublicRoutes.home(),
+    title: op.orgName,
+    description: op.description,
+    keywords: [
+      op.orgName,
+      ...ORG_SEO.homeKeywords,
+      ...locationKeywords,
+      ...getHomeServiceKeywords(op.otherLangKeys),
+    ],
+  }),
+  about: (): PageSeo => ({
+    canonicalPathname: PublicRoutes.about(),
+    title: `About ${op.orgName}`,
+    description: `Learn about ${op.orgName}, our experience, values, and the team behind our rendering and cladding work in Melbourne.`,
+    keywords: [
+      op.orgName,
+      `About ${op.orgName}`,
+      ...ORG_SEO.aboutKeywords,
+      ...locationKeywords,
+    ],
+  }),
+
+  contact: (): PageSeo => ({
+    canonicalPathname: PublicRoutes.contact(),
+    title: `Contact ${op.orgName}`,
+    description: `Request a free quote or free consultation or send an enquiry to ${op.orgName}. We service South East Melbourne and surrounding suburbs.`,
+    keywords: [
+      op.orgName,
+      `Contact ${op.orgName}`,
+      ...ORG_SEO.contactKeywords,
+      SERVICE_AREA.primaryRegion,
+      ...(SERVICE_AREA.featuredSuburbs ?? []),
+    ],
+  }),
+
+  // Dynamic helper for services
+  service: (input: {
+    slug: string;
+    label: string;
+    description: string;
+    keywords?: string[];
+    ogImagePath?: string;
+  }): PageSeo => ({
+    canonicalPathname: PublicRoutes.service(input.slug),
+    title: `${input.label} | ${op.orgName}`,
+    description: input.description,
+    keywords: [
+      op.orgName,
+      ...ORG_SEO.serviceBaseKeywords,
+      ...(input.keywords ?? []),
+    ],
+    ogImagePath: input.ogImagePath,
+  }),
+};

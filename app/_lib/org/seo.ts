@@ -1,0 +1,60 @@
+export const ORG_SEO = {
+  defaultKeywords: [
+    "Painting",
+    "Decorating",
+    "Painters Melbourne",
+    "Painting Services",
+    "Residential Painting",
+    "Commercial Painting",
+    "Interior Painting",
+    "Exterior Painting",
+    "House Painters",
+    "Professional Painters",
+  ] as const,
+
+  homeKeywords: [
+    "Painting",
+    "Decorating",
+    "Painters Melbourne",
+    "Painting Services",
+    "Residential Painting",
+    "Commercial Painting",
+    "Interior Painting",
+    "Exterior Painting",
+    "House Painters",
+    "Professional Painters",
+  ] as const,
+
+  aboutKeywords: [
+    "Painting",
+    "Decorating",
+    "Residential Painting",
+    "Commercial Painting",
+    "Interior Painting",
+    "Exterior Painting",
+    "House Painters",
+    "Melbourne Painters",
+  ] as const,
+
+  contactKeywords: [
+    "Painting Quote",
+    "Painter Quote",
+    "Free Painting Quote",
+    "Residential Painting",
+    "Commercial Painting",
+    "Interior Painting",
+    "Exterior Painting",
+    "Painters South East Melbourne",
+  ] as const,
+
+  serviceBaseKeywords: [
+    "Painting",
+    "Decorating",
+    "Residential Painting",
+    "Commercial Painting",
+    "Interior Painting",
+    "Exterior Painting",
+    "Painting Maintenance",
+    "Melbourne Painters",
+  ] as const,
+} as const;
