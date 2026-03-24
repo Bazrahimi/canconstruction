@@ -7,7 +7,7 @@ import { siliconeAndCaulking } from "./subCategories/siliconeAndCaulking";
 
 export const SERVICES_PAGE = {
   commercialAndResidentialPainting: {
-    slug: "commercial-and-residential-painting",
+    slug: "commercial-and-residential-painting-cranbourne",
     label: "Commercial And Residential Painting",
     image: [cldImages.services.commercialAndResidentialPainting],
     labelFarsi: "رنگ‌آمیزی تجاری و مسکونی",
@@ -18,7 +18,7 @@ export const SERVICES_PAGE = {
   },
 
   rendering: {
-    slug: "rendering-services",
+    slug: "rendering-cranbourne",
     label: "Rendering Services",
     image: [cldImages.services.rendering],
     labelFarsi: "خدمات رندرینگ",
@@ -29,7 +29,7 @@ export const SERVICES_PAGE = {
   },
 
   siliconeAndCaulking: {
-    slug: "silicone-and-caulking-services",
+    slug: "silicone-and-caulking-cranbourne",
     label: "Silicone And Caulking Services",
     image: [cldImages.services.siliconeAndCaulking],
     labelFarsi: "خدمات سیلیکون و کالکینگ",
