@@ -6,13 +6,13 @@ import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
 
 const ORG_DOMAIN = "canconstruction.com.au" as const;
 const orgName = "Can Construction Pty Ltd";
-const appName = "canconstruction";
+// const appName = "canconstruction";
 
 export const getBaseUrl = (): string => {
   if (process.env.NODE_ENV === "development") return "http://localhost:3000";
-  if (process.env.VERCEL_URL) {
-    return `https://${appName}.demo.katebtech.com.au`;
-  }
+  // if (process.env.VERCEL_URL) {
+  //   return `https://${appName}.demo.katebtech.com.au`;
+  // }
   return `https://${ORG_DOMAIN}`;
 };
 
