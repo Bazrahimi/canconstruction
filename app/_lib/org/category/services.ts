@@ -1,41 +1,41 @@
 import type { ServicesPage } from "../definitions";
 import { cldImages } from "../publicAssets";
 
-import { commercialPainting } from "./subCategories/commercialPainting";
-import { paintingMaintenance } from "./subCategories/paintingMaintenance";
-import { residentialPainting } from "./subCategories/residentialPainting";
+import { commercialAndResidentialPainting } from "./subCategories/commercialAndResidentialPainting";
+import { rendering } from "./subCategories/rendering";
+import { siliconeAndCaulking } from "./subCategories/siliconeAndCaulking";
 
 export const SERVICES_PAGE = {
-  residentialPainting: {
-    slug: "residential-painting-and-decorating",
-    label: "Residential Painting And Decorating",
-    image: [cldImages.services.residentialPainting],
-    labelFarsi: "رنگ‌آمیزی و دکوراسیون مسکونی",
+  commercialAndResidentialPainting: {
+    slug: "commercial-and-residential-painting",
+    label: "Commercial And Residential Painting",
+    image: [cldImages.services.commercialAndResidentialPainting],
+    labelFarsi: "رنگ‌آمیزی تجاری و مسکونی",
     description: [
-      "Interior and exterior residential painting services for homes, units, townhouses, and renovations across Melbourne’s south eastern suburbs.",
+      "Professional painting services for residential and commercial properties across Victoria, including new builds, apartments, houses, repaints, and maintenance work.",
     ] as const,
-    subcategories: residentialPainting,
+    subcategories: commercialAndResidentialPainting,
   },
 
-  commercialPainting: {
-    slug: "commercial-painting-and-decorating",
-    label: "Commercial Painting And Decorating",
-    image: [cldImages.services.commercialPainting],
-    labelFarsi: "رنگ‌آمیزی و دکوراسیون تجاری",
+  rendering: {
+    slug: "rendering-services",
+    label: "Rendering Services",
+    image: [cldImages.services.rendering],
+    labelFarsi: "خدمات رندرینگ",
     description: [
-      "Professional commercial painting for offices, shops, warehouses, strata properties, and business premises with durable finishes and reliable project delivery.",
+      "Quality rendering services for new homes, apartments, commercial projects, renovations, and repair works with clean finishes and reliable workmanship.",
     ] as const,
-    subcategories: commercialPainting,
+    subcategories: rendering,
   },
 
-  paintingMaintenance: {
-    slug: "painting-maintenance-and-repairs",
-    label: "Painting Maintenance And Repairs",
-    image: [cldImages.services.paintingMaintenance],
-    labelFarsi: "نگهداری و ترمیم رنگ",
+  siliconeAndCaulking: {
+    slug: "silicone-and-caulking-services",
+    label: "Silicone And Caulking Services",
+    image: [cldImages.services.siliconeAndCaulking],
+    labelFarsi: "خدمات سیلیکون و کالکینگ",
     description: [
-      "Painting maintenance, touch-ups, surface repairs, and protective recoating to keep residential and commercial properties looking clean and well maintained.",
+      "Professional silicone and caulking services for bathrooms, kitchens, windows, facades, apartments, commercial sites, and maintenance projects.",
     ] as const,
-    subcategories: paintingMaintenance,
+    subcategories: siliconeAndCaulking,
   },
 } as const satisfies Record<string, ServicesPage>;

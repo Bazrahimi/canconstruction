@@ -4,11 +4,15 @@ import { CtaKey } from "../content/cta";
 import { OtherLanguageKey } from "../languages/multiculturalStatement";
 import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
 
-const ORG_DOMAIN = "goldenviewpainting.com.au" as const;
-const orgName = "Golden View Painting";
+const ORG_DOMAIN = "canconstruction.com.au" as const;
+const orgName = "Can Construction Pty Ltd";
+const appName = "canconstruction";
 
 export const getBaseUrl = (): string => {
   if (process.env.NODE_ENV === "development") return "http://localhost:3000";
+  if (process.env.VERCEL_URL) {
+    return `https://${appName}.demo.katebtech.com.au`;
+  }
   return `https://${ORG_DOMAIN}`;
 };
 
@@ -18,15 +22,15 @@ export const ORG_PROFILE = {
   industry: ORG_INDUSTRY_SECTORS.BUILDING.industry,
   subSector: ORG_INDUSTRY_SECTORS.BUILDING.Sectors.painting,
   description:
-    "Professional residential and commercial Painting and Decorating in the south eastern suburbs of Melbourne",
+    "Professional painting, Silicon | Caulking, and rendering services across Victoria for residential and commercial projects.",
   // languages: ["EN", "HZ", "FA"] as const satisfies readonly LanguageKey[],
   otherLangKeys: [] as OtherLanguageKey[],
   domain: ORG_DOMAIN,
-  email: "goldenviewpainting@gmail.com",
+  email: "canconstruction12@gmail.com",
   phone: "0406 182 099",
-  address: "2/2 Laurina court doveton Vic 3177 ",
-  abn: "66 675 626 829",
+  address: "2 Faldo Place, Cranbourne VIC 3977",
+  abn: "37 649 729 395",
   cta: "freeQuote" as CtaKey,
-  primaryColor: "#0d3f75",
+  primaryColor: "#1f1f1f",
   secondaryColor: "#cfa428",
 } as const;

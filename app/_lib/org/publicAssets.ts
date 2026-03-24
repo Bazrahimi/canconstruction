@@ -15,21 +15,21 @@ export const publicAssets = {
 
 export const cldImages = {
   hero: {
-    url: "v1773967486/business-f/building/painting/painting_living_area_fogs5y.jpg",
+    url: "v1774340276/business-f/building/rendering/exerior-view-house_egkk1f.png",
     alt: "",
   } as ImageMeta,
   services: {
-    residentialPainting: {
-      url: "v1774317481/business-f/building/painting/residential_painting_im8yzm.png",
+    commercialAndResidentialPainting: {
+      url: "v1773967486/business-f/building/painting/painting_living_area_fogs5y.jpg",
       alt: "painting plaster walls ",
     } as ImageMeta,
-    commercialPainting: {
-      url: "v1774318061/business-f/building/painting/commerical_painting_qwxtao.png",
-      alt: "Commercial Painting work",
+    rendering: {
+      url: "v1774340881/business-f/building/rendering/render-finish_nepkog.png",
+      alt: "residential Rendering work",
     } as ImageMeta,
-    paintingMaintenance: {
-      url: "v1774318245/business-f/building/painting/patching_wall_fuqe5k.png",
-      alt: "Patching walls",
+    siliconeAndCaulking: {
+      url: "v1774342161/business-f/building/caulking/caulking_c1ehzy.png",
+      alt: "caulking wet area",
     } as ImageMeta,
   },
 };
