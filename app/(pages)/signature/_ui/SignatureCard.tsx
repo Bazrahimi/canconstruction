@@ -106,14 +106,31 @@ export default function SignatureCard({
           >
             <tbody>
               <tr>
-                <td colSpan={2} style={{ paddingBottom: "14px" }}>
-                  <div
-                    style={{
-                      height: "4px",
-                      width: "100%",
-                      backgroundColor: signature.secondaryColor,
-                    }}
-                  />
+                <td
+                  colSpan={2}
+                  style={{
+                    height: "4px",
+                    backgroundColor: signature.secondaryColor,
+                    fontSize: "0",
+                    lineHeight: "0",
+                    padding: "0",
+                  }}
+                >
+                  &nbsp;
+                </td>
+              </tr>
+
+              <tr>
+                <td
+                  colSpan={2}
+                  style={{
+                    height: "14px",
+                    fontSize: "0",
+                    lineHeight: "0",
+                    padding: "0",
+                  }}
+                >
+                  &nbsp;
                 </td>
               </tr>
 
@@ -167,16 +184,12 @@ export default function SignatureCard({
 
                   <div
                     style={{
+                      color: "#4b5563",
+                      borderTop: `1px solid ${signature.secondaryColor}`,
+                      paddingTop: "12px",
                       marginTop: "12px",
-                      marginBottom: "12px",
-                      height: "2px",
-                      width: "100%",
-                      backgroundColor: signature.secondaryColor,
-                      opacity: 0.35,
                     }}
-                  />
-
-                  <div style={{ color: "#4b5563" }}>
+                  >
                     <div style={{ marginBottom: "4px" }}>
                       <span style={labelStyle}>Phone:</span> {signature.phone}
                     </div>
