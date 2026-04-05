@@ -1,8 +1,23 @@
 "use server";
 
-import { toActionErrors } from "@/app/_lib/utils/actionHelper";
-import { handleEnquiryEmails } from "./handleEnquiryEmail";
-import { EnquiryForm, EnquirySchema, EnquiryState } from "./schema";
+import { serverEnv } from "@/app/_lib/env/server";
+import { getBaseUrl, ORG_PROFILE as op } from "@/app/_lib/org/profile";
+import { publicAssets } from "@/app/_lib/org/publicAssets";
+import { toActionErrors } from "@katebtech/framework/dist/_lib/utils/actionHelper";
+import type { OrgInfo } from "@katebtech/framework/dist/emails/contact/handleEnquiryEmail";
+import { handleEnquiryEmails } from "@katebtech/framework/dist/emails/contact/handleEnquiryEmail";
+import { EnquiryForm, EnquirySchema, EnquiryState } from "@katebtech/framework/dist/emails/contact/schema";
+
+const resendApiKey = serverEnv.resendApiKey;
+const orgInfo: OrgInfo = {
+  email: op.email,
+  name: op.orgName,
+  orgNameFarsi: op.orgNameFarsi,
+  phone: op.phone,
+  address: op.address,
+  website: `https://${op.domain}`,
+  icon: `${getBaseUrl()}${publicAssets.icons.apple}`,
+};
 
 export const submitEnquiry = async (
   prevState: EnquiryState | undefined,
@@ -24,9 +39,13 @@ export const submitEnquiry = async (
     };
   }
 
-  const data = parsed.data;
+  const enquiryData = parsed.data;
 
-  const { message } = await handleEnquiryEmails(data);
+  const { message } = await handleEnquiryEmails({
+    enquiry: enquiryData,
+    apiKey: resendApiKey,
+    orgInfo: orgInfo,
+  });
 
   return {
     ok: true,

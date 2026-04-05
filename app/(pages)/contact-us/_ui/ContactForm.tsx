@@ -5,13 +5,13 @@ import Input from "@/app/_ui/form/Input";
 import Textarea from "@/app/_ui/form/Textarea";
 import { Header } from "@/app/_ui/typography/Header";
 import { P } from "@/app/_ui/typography/paragraph";
+import { ENQUIRY_FIELDS as F } from "@katebtech/framework/dist/emails/contact/constant";
 import { motion } from "motion/react";
 import { useActionState } from "react";
 import { CiUser } from "react-icons/ci";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { submitEnquiry } from "../_lib/action";
-import { ENQUIRY_FIELDS as F } from "../_lib/constant";
 import { ContactSuccessMessage } from "./ContactSuccess";
 
 type Props = {
@@ -66,7 +66,7 @@ const Form = ({ header, subHeader, message }: Props) => {
     <div className="max-w-lg mx-auto rounded-2xl bg-gray-100 p-6 shadow-lg">
       <form className="space-y-2 relative" action={formAction} noValidate>
         {header && (
-          <Header  as="h3" size="sm">
+          <Header as="h3" size="sm">
             {header}
           </Header>
         )}

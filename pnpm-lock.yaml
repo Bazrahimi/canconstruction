@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@katebtech/framework':
         specifier: github:Bazrahimi/katebtech-framework
-        version: git+https://git@github.com:Bazrahimi/katebtech-framework.git#317948aeabbb16b8f0f1289ee00a5d2675104d82(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        version: git+https://git@github.com:Bazrahimi/katebtech-framework.git#18e1893d954cfd9e5535ca47e0a6cd44cc1f9446(@react-email/render@2.0.5(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@react-email/components':
         specifier: ^1.0.7
         version: 1.0.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -34,7 +34,7 @@ importers:
         version: 5.5.0(react@19.2.3)
       resend:
         specifier: ^6.9.1
-        version: 6.9.1(@react-email/render@2.0.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
+        version: 6.9.1(@react-email/render@2.0.5(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
       swiper:
         specifier: ^12.1.2
         version: 12.1.2
@@ -359,8 +359,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@katebtech/framework@git+https://git@github.com:Bazrahimi/katebtech-framework.git#317948aeabbb16b8f0f1289ee00a5d2675104d82':
-    resolution: {commit: 317948aeabbb16b8f0f1289ee00a5d2675104d82, repo: git@github.com:Bazrahimi/katebtech-framework.git, type: git}
+  '@katebtech/framework@git+https://git@github.com:Bazrahimi/katebtech-framework.git#18e1893d954cfd9e5535ca47e0a6cd44cc1f9446':
+    resolution: {commit: 18e1893d954cfd9e5535ca47e0a6cd44cc1f9446, repo: git@github.com:Bazrahimi/katebtech-framework.git, type: git}
     version: 0.1.0
     peerDependencies:
       react: ^19.0.0
@@ -445,6 +445,12 @@ packages:
     peerDependencies:
       react: ^18.0 || ^19.0 || ^19.0.0-rc
 
+  '@react-email/body@0.3.0':
+    resolution: {integrity: sha512-uGo0BOOzjbMUo3lu+BIDWayvn5o6Xyfmnlla5VGf05n8gHMvO1ll7U4FtzWe3hxMLwt53pmc4iE0M+B5slG+Ug==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      react: ^18.0 || ^19.0 || ^19.0.0-rc
+
   '@react-email/button@0.2.1':
     resolution: {integrity: sha512-qXyj7RZLE7POy9BMKSoqQ00tOXThjOZSUnI2Yu9i29IHngPlmrNayIWBoVKtElES7OWwypUcpiajwi1mUWx6/A==}
     engines: {node: '>=20.0.0'}
@@ -465,6 +471,12 @@ packages:
 
   '@react-email/column@0.0.14':
     resolution: {integrity: sha512-f+W+Bk2AjNO77zynE33rHuQhyqVICx4RYtGX9NKsGUg0wWjdGP0qAuIkhx9Rnmk4/hFMo1fUrtYNqca9fwJdHg==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      react: ^18.0 || ^19.0 || ^19.0.0-rc
+
+  '@react-email/components@1.0.11':
+    resolution: {integrity: sha512-s0CX31+S/u1MhBWYFAuZru0NHNExTY+OeZC9OrGyzl8PGQ0Iz/4gq3O4rHUVuA1D7FjAcPbwG1Up0yey/Xh6dw==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: ^18.0 || ^19.0 || ^19.0.0-rc
@@ -542,6 +554,13 @@ packages:
       react: ^18.0 || ^19.0 || ^19.0.0-rc
       react-dom: ^18.0 || ^19.0 || ^19.0.0-rc
 
+  '@react-email/render@2.0.5':
+    resolution: {integrity: sha512-oAsSpY/vYt9ReDcRQDBLxENwCNAklkE6bvP5Kl9ZlmVr/RZpfhloJp8xc/OZki/YF2nisRRX50aEy8P9v3R5GA==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      react: ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^18.0 || ^19.0 || ^19.0.0-rc
+
   '@react-email/row@0.0.13':
     resolution: {integrity: sha512-bYnOac40vIKCId7IkwuLAAsa3fKfSfqCvv6epJKmPE0JBuu5qI4FHFCl9o9dVpIIS08s/ub+Y/txoMt0dYziGw==}
     engines: {node: '>=20.0.0'}
@@ -569,6 +588,44 @@ packages:
       '@react-email/link': 0.0.13
       '@react-email/preview': 0.0.14
       '@react-email/text': 0.1.6
+      react: ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@react-email/body':
+        optional: true
+      '@react-email/button':
+        optional: true
+      '@react-email/code-block':
+        optional: true
+      '@react-email/code-inline':
+        optional: true
+      '@react-email/container':
+        optional: true
+      '@react-email/heading':
+        optional: true
+      '@react-email/hr':
+        optional: true
+      '@react-email/img':
+        optional: true
+      '@react-email/link':
+        optional: true
+      '@react-email/preview':
+        optional: true
+
+  '@react-email/tailwind@2.0.7':
+    resolution: {integrity: sha512-kGw80weVFXikcnCXbigTGXGWQ0MRCSYNCudcdkWxebkWYd0FG6/NPoN3V1p/u68/4+NxZwYPVi2fhnp0x23HdA==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      '@react-email/body': '>=0'
+      '@react-email/button': '>=0'
+      '@react-email/code-block': '>=0'
+      '@react-email/code-inline': '>=0'
+      '@react-email/container': '>=0'
+      '@react-email/heading': '>=0'
+      '@react-email/hr': '>=0'
+      '@react-email/img': '>=0'
+      '@react-email/link': '>=0'
+      '@react-email/preview': '>=0'
+      '@react-email/text': '>=0'
       react: ^18.0 || ^19.0 || ^19.0.0-rc
     peerDependenciesMeta:
       '@react-email/body':
@@ -1913,6 +1970,9 @@ packages:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
     engines: {node: '>= 0.4'}
 
+  postal-mime@2.7.4:
+    resolution: {integrity: sha512-0WdnFQYUrPGGTFu1uOqD2s7omwua8xaeYGdO6rb88oD5yJ/4pPHDA4sdWqfD8wQVfCny563n/HQS7zTFft+f/g==}
+
   postcss@8.4.31:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
@@ -1972,6 +2032,15 @@ packages:
   regexp.prototype.flags@1.5.4:
     resolution: {integrity: sha512-dYqgNSZbDwkaJ2ceRd9ojCGjBq+mOm9LmtXnAnEGyHhN/5R7iDW2TRw3h+o/jCFxus3P2LfWIIiwowAjANm7IA==}
     engines: {node: '>= 0.4'}
+
+  resend@6.10.0:
+    resolution: {integrity: sha512-i7CwZpYj4Oho1RxsTpLcCUkO08+HiL4NXrm6jLJ2WzJ89UGI8eROSieLONJA3hnUrf1OYnCyfq5F6POnHUMv1Q==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@react-email/render': '*'
+    peerDependenciesMeta:
+      '@react-email/render':
+        optional: true
 
   resend@6.9.1:
     resolution: {integrity: sha512-jFY3qPP2cith1npRXvS7PVdnhbR1CcuzHg65ty5Elv55GKiXhe+nItXuzzoOlKeYJez1iJAo2+8f6ae8sCj0iA==}
@@ -2034,6 +2103,9 @@ packages:
     resolution: {integrity: sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==}
     engines: {node: '>=10'}
     hasBin: true
+
+  server-only@0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
 
   set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
@@ -2143,6 +2215,9 @@ packages:
 
   svix@1.84.1:
     resolution: {integrity: sha512-K8DPPSZaW/XqXiz1kEyzSHYgmGLnhB43nQCMeKjWGCUpLIpAMMM8kx3rVVOSm6Bo6EHyK1RQLPT4R06skM/MlQ==}
+
+  svix@1.88.0:
+    resolution: {integrity: sha512-vm/JrrUd3bVyBE+3L33TIyVSs8gS5fYx7lrISvKlDJXTYX1ACH4REX8P1tHxsSKoZi/rvifM1t0XRc5Vc45THw==}
 
   swiper@12.1.2:
     resolution: {integrity: sha512-4gILrI3vXZqoZh71I1PALqukCFgk+gpOwe1tOvz5uE9kHtl2gTDzmYflYCwWvR4LOvCrJi6UEEU+gnuW5BtkgQ==}
@@ -2574,10 +2649,16 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@katebtech/framework@git+https://git@github.com:Bazrahimi/katebtech-framework.git#317948aeabbb16b8f0f1289ee00a5d2675104d82(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@katebtech/framework@git+https://git@github.com:Bazrahimi/katebtech-framework.git#18e1893d954cfd9e5535ca47e0a6cd44cc1f9446(@react-email/render@2.0.5(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
+      '@react-email/components': 1.0.11(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
+      resend: 6.10.0(@react-email/render@2.0.5(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
+      server-only: 0.0.1
+      zod: 4.3.6
+    transitivePeerDependencies:
+      - '@react-email/render'
 
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
@@ -2634,6 +2715,10 @@ snapshots:
     dependencies:
       react: 19.2.3
 
+  '@react-email/body@0.3.0(react@19.2.3)':
+    dependencies:
+      react: 19.2.3
+
   '@react-email/button@0.2.1(react@19.2.3)':
     dependencies:
       react: 19.2.3
@@ -2650,6 +2735,32 @@ snapshots:
   '@react-email/column@0.0.14(react@19.2.3)':
     dependencies:
       react: 19.2.3
+
+  '@react-email/components@1.0.11(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+    dependencies:
+      '@react-email/body': 0.3.0(react@19.2.3)
+      '@react-email/button': 0.2.1(react@19.2.3)
+      '@react-email/code-block': 0.2.1(react@19.2.3)
+      '@react-email/code-inline': 0.0.6(react@19.2.3)
+      '@react-email/column': 0.0.14(react@19.2.3)
+      '@react-email/container': 0.0.16(react@19.2.3)
+      '@react-email/font': 0.0.10(react@19.2.3)
+      '@react-email/head': 0.0.13(react@19.2.3)
+      '@react-email/heading': 0.0.16(react@19.2.3)
+      '@react-email/hr': 0.0.12(react@19.2.3)
+      '@react-email/html': 0.0.12(react@19.2.3)
+      '@react-email/img': 0.0.12(react@19.2.3)
+      '@react-email/link': 0.0.13(react@19.2.3)
+      '@react-email/markdown': 0.0.18(react@19.2.3)
+      '@react-email/preview': 0.0.14(react@19.2.3)
+      '@react-email/render': 2.0.5(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@react-email/row': 0.0.13(react@19.2.3)
+      '@react-email/section': 0.0.17(react@19.2.3)
+      '@react-email/tailwind': 2.0.7(@react-email/body@0.3.0(react@19.2.3))(@react-email/button@0.2.1(react@19.2.3))(@react-email/code-block@0.2.1(react@19.2.3))(@react-email/code-inline@0.0.6(react@19.2.3))(@react-email/container@0.0.16(react@19.2.3))(@react-email/heading@0.0.16(react@19.2.3))(@react-email/hr@0.0.12(react@19.2.3))(@react-email/img@0.0.12(react@19.2.3))(@react-email/link@0.0.13(react@19.2.3))(@react-email/preview@0.0.14(react@19.2.3))(@react-email/text@0.1.6(react@19.2.3))(react@19.2.3)
+      '@react-email/text': 0.1.6(react@19.2.3)
+      react: 19.2.3
+    transitivePeerDependencies:
+      - react-dom
 
   '@react-email/components@1.0.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
@@ -2725,6 +2836,13 @@ snapshots:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
 
+  '@react-email/render@2.0.5(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+    dependencies:
+      html-to-text: 9.0.5
+      prettier: 3.8.1
+      react: 19.2.3
+      react-dom: 19.2.3(react@19.2.3)
+
   '@react-email/row@0.0.13(react@19.2.3)':
     dependencies:
       react: 19.2.3
@@ -2740,6 +2858,23 @@ snapshots:
       tailwindcss: 4.1.18
     optionalDependencies:
       '@react-email/body': 0.2.1(react@19.2.3)
+      '@react-email/button': 0.2.1(react@19.2.3)
+      '@react-email/code-block': 0.2.1(react@19.2.3)
+      '@react-email/code-inline': 0.0.6(react@19.2.3)
+      '@react-email/container': 0.0.16(react@19.2.3)
+      '@react-email/heading': 0.0.16(react@19.2.3)
+      '@react-email/hr': 0.0.12(react@19.2.3)
+      '@react-email/img': 0.0.12(react@19.2.3)
+      '@react-email/link': 0.0.13(react@19.2.3)
+      '@react-email/preview': 0.0.14(react@19.2.3)
+
+  '@react-email/tailwind@2.0.7(@react-email/body@0.3.0(react@19.2.3))(@react-email/button@0.2.1(react@19.2.3))(@react-email/code-block@0.2.1(react@19.2.3))(@react-email/code-inline@0.0.6(react@19.2.3))(@react-email/container@0.0.16(react@19.2.3))(@react-email/heading@0.0.16(react@19.2.3))(@react-email/hr@0.0.12(react@19.2.3))(@react-email/img@0.0.12(react@19.2.3))(@react-email/link@0.0.13(react@19.2.3))(@react-email/preview@0.0.14(react@19.2.3))(@react-email/text@0.1.6(react@19.2.3))(react@19.2.3)':
+    dependencies:
+      '@react-email/text': 0.1.6(react@19.2.3)
+      react: 19.2.3
+      tailwindcss: 4.1.18
+    optionalDependencies:
+      '@react-email/body': 0.3.0(react@19.2.3)
       '@react-email/button': 0.2.1(react@19.2.3)
       '@react-email/code-block': 0.2.1(react@19.2.3)
       '@react-email/code-inline': 0.0.6(react@19.2.3)
@@ -4203,6 +4338,8 @@ snapshots:
 
   possible-typed-array-names@1.1.0: {}
 
+  postal-mime@2.7.4: {}
+
   postcss@8.4.31:
     dependencies:
       nanoid: 3.3.11
@@ -4266,12 +4403,19 @@ snapshots:
       gopd: 1.2.0
       set-function-name: 2.0.2
 
-  resend@6.9.1(@react-email/render@2.0.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)):
+  resend@6.10.0(@react-email/render@2.0.5(react-dom@19.2.3(react@19.2.3))(react@19.2.3)):
+    dependencies:
+      postal-mime: 2.7.4
+      svix: 1.88.0
+    optionalDependencies:
+      '@react-email/render': 2.0.5(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+
+  resend@6.9.1(@react-email/render@2.0.5(react-dom@19.2.3(react@19.2.3))(react@19.2.3)):
     dependencies:
       mailparser: 3.9.1
       svix: 1.84.1
     optionalDependencies:
-      '@react-email/render': 2.0.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@react-email/render': 2.0.5(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
 
   resolve-from@4.0.0: {}
 
@@ -4325,6 +4469,8 @@ snapshots:
   semver@6.3.1: {}
 
   semver@7.7.4: {}
+
+  server-only@0.0.1: {}
 
   set-function-length@1.2.2:
     dependencies:
@@ -4496,6 +4642,11 @@ snapshots:
   supports-preserve-symlinks-flag@1.0.0: {}
 
   svix@1.84.1:
+    dependencies:
+      standardwebhooks: 1.0.0
+      uuid: 10.0.0
+
+  svix@1.88.0:
     dependencies:
       standardwebhooks: 1.0.0
       uuid: 10.0.0

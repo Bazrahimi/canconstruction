@@ -57,7 +57,6 @@ export const ABOUT_TEAM: TeamSection = {
   ],
 } as const;
 
-
 export const SOCIAL_MEDIA = {
   facebook: "faceboo.com",
   instagram: "tiktok.com",
