@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@katebtech/framework": "github:Bazrahimi/katebtech-framework",
     "@react-email/components": "^1.0.7",
     "clsx": "^2.1.1",
     "motion": "^12.34.0",

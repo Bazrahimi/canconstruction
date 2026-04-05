@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@katebtech/framework':
+        specifier: github:Bazrahimi/katebtech-framework
+        version: git+https://git@github.com:Bazrahimi/katebtech-framework.git#317948aeabbb16b8f0f1289ee00a5d2675104d82(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@react-email/components':
         specifier: ^1.0.7
         version: 1.0.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -355,6 +358,13 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@katebtech/framework@git+https://git@github.com:Bazrahimi/katebtech-framework.git#317948aeabbb16b8f0f1289ee00a5d2675104d82':
+    resolution: {commit: 317948aeabbb16b8f0f1289ee00a5d2675104d82, repo: git@github.com:Bazrahimi/katebtech-framework.git, type: git}
+    version: 0.1.0
+    peerDependencies:
+      react: ^19.0.0
+      react-dom: ^19.0.0
 
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
@@ -2563,6 +2573,11 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@katebtech/framework@git+https://git@github.com:Bazrahimi/katebtech-framework.git#317948aeabbb16b8f0f1289ee00a5d2675104d82(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+    dependencies:
+      react: 19.2.3
+      react-dom: 19.2.3(react@19.2.3)
 
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
