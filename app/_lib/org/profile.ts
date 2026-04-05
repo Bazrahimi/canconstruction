@@ -2,6 +2,8 @@
 
 import { CtaKey } from "../content/cta";
 import { OtherLanguageKey } from "../languages/multiculturalStatement";
+import type { TeamSection } from "./definitions";
+import { publicAssets } from "./publicAssets";
 import { ORG_INDUSTRY_SECTORS } from "./serviceArea";
 
 const ORG_DOMAIN = "canconstruction.com.au" as const;
@@ -33,4 +35,31 @@ export const ORG_PROFILE = {
   cta: "freeQuote" as CtaKey,
   primaryColor: "#1f1f1f",
   secondaryColor: "#cfa428",
+} as const;
+
+export const ABOUT_TEAM: TeamSection = {
+  id: "team",
+  title: "Our Team",
+  professionalTitles: [
+    "Painting Contractors",
+    "Rendering Contractors",
+    "Silicone and Caulking Specialists",
+    "Residential and Commercial Finishes",
+  ],
+  intro: `${ORG_PROFILE.orgName} is backed by practical construction experience and a strong commitment to quality workmanship across residential and commercial projects in Victoria.`,
+  members: [
+    {
+      name: "Zia Noyan",
+      role: "Director",
+      image: publicAssets.team.placeholder,
+      bio: "Zia Noyan is the Director of CAN Construction and brings extensive experience across construction, painting, rendering, and finishing works. He is committed to delivering reliable service, quality workmanship, and professional results across residential and commercial projects.",
+    },
+  ],
+} as const;
+
+
+export const SOCIAL_MEDIA = {
+  facebook: "faceboo.com",
+  instagram: "tiktok.com",
+  tiktok: "", // leave empty or undefined if not used
 } as const;

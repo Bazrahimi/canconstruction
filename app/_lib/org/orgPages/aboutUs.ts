@@ -1,27 +1,5 @@
 // app/_lib/org/aboutUs.ts
-import type { TeamSection } from "../definitions";
 import { ORG_PROFILE } from "../profile";
-import { publicAssets } from "../publicAssets";
-
-export const ABOUT_TEAM: TeamSection = {
-  id: "team",
-  title: "Our Team",
-  professionalTitles: [
-    "Painting Contractors",
-    "Rendering Contractors",
-    "Silicone and Caulking Specialists",
-    "Residential and Commercial Finishes",
-  ],
-  intro: `${ORG_PROFILE.orgName} is backed by practical construction experience and a strong commitment to quality workmanship across residential and commercial projects in Victoria.`,
-  members: [
-    {
-      name: "Zia Noyan",
-      role: "Director",
-      image: publicAssets.team.placeholder,
-      bio: "Zia Noyan is the Director of CAN Construction and brings extensive experience across construction, painting, rendering, and finishing works. He is committed to delivering reliable service, quality workmanship, and professional results across residential and commercial projects.",
-    },
-  ],
-} as const;
 
 export type TextSection = {
   id: string;

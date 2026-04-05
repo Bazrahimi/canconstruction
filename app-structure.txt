@@ -1,10 +1,52 @@
-my-app/app-structure.txt
 app
+├── (pages)
+│   ├── about-us
+│   │   ├── _ui
+│   │   │   ├── AboutTextSections.tsx
+│   │   │   ├── AboutValues.tsx
+│   │   │   └── TeamGrid.tsx
+│   │   └── page.tsx
+│   ├── contact-us
+│   │   ├── _lib
+│   │   │   ├── action.ts
+│   │   │   ├── constant.ts
+│   │   │   ├── handleEnquiryEmail.ts
+│   │   │   └── schema.ts
+│   │   ├── _ui
+│   │   │   ├── ContactDetails.tsx
+│   │   │   ├── ContactFAQ.tsx
+│   │   │   ├── ContactForm.tsx
+│   │   │   ├── ContactIntro.tsx
+│   │   │   ├── ContactMap.tsx
+│   │   │   ├── ContactSuccess.tsx
+│   │   │   ├── OpeningHours.tsx
+│   │   │   └── ServiceArea.tsx
+│   │   └── page.tsx
+│   ├── free-consultation
+│   │   └── page.tsx
+│   ├── languages
+│   │   └── [otherLangs]
+│   │       ├── _ui
+│   │       │   └── SubcategoriesOtherLangs.tsx
+│   │       └── page.tsx
+│   ├── page.tsx
+│   └── services
+│       ├── [slug]
+│       │   ├── _ui
+│       │   │   ├── ServiceDetails.tsx
+│       │   │   ├── ServiceLeafCard.tsx
+│       │   │   ├── ServiceLeafCardSkeleton.tsx
+│       │   │   └── ServiceLeafImage.tsx
+│       │   └── page.tsx
+│       ├── _ui
+│       │   └── ServicesHero.tsx
+│       └── page.tsx
 ├── _lib
 │   ├── cloudinary
 │   │   └── cloudinary.ts
 │   ├── content
 │   │   └── cta.ts
+│   ├── definitions.ts
 │   ├── email
 │   │   ├── SendToAdmin.tsx
 │   │   ├── emailClient.ts
@@ -16,24 +58,21 @@ app
 │   │   └── multiculturalStatement.ts
 │   ├── org
 │   │   ├── category
-│   │   │   ├── assets.ts
 │   │   │   ├── serviceLookup.ts
 │   │   │   ├── services.ts
 │   │   │   └── subCategories
-│   │   │       ├── acrylicRendering.ts
-│   │   │       ├── cementRendering.ts
-│   │   │       ├── concreteRender.ts
-│   │   │       ├── crackRepairs.ts
-│   │   │       ├── hebelCladding.ts
-│   │   │       └── polystyreneCladding.ts
+│   │   │       ├── commercialAndResidentialPainting.ts
+│   │   │       ├── rendering.ts
+│   │   │       └── siliconeAndCaulking.ts
 │   │   ├── definitions.ts
 │   │   ├── font.ts
-│   │   ├── icons.ts
 │   │   ├── layoutAndSeo.ts
 │   │   ├── orgPages
 │   │   │   ├── aboutUs.ts
 │   │   │   └── contactUs.ts
 │   │   ├── profile.ts
+│   │   ├── publicAssets.ts
+│   │   ├── seo.ts
 │   │   └── serviceArea.ts
 │   ├── routes
 │   │   └── publicRoutes.ts
@@ -59,7 +98,10 @@ app
 │   │   ├── hook
 │   │   │   ├── useCarouselNav.ts
 │   │   │   └── useMounted.ts
-│   │   └── index.ts
+│   │   ├── index.ts
+│   │   └── modal
+│   │       ├── ServiceLeafModal.tsx
+│   │       └── ServiceLeafModalContent.tsx
 │   ├── content
 │   │   ├── List.tsx
 │   │   ├── MultiLanguageCapacity.tsx
@@ -92,11 +134,11 @@ app
 │   │       ├── HeroLink.tsx
 │   │       ├── HeroLogoVisualCard.tsx
 │   │       ├── HeroMicroNav.tsx
-│   │       ├── HeroServiceBadge.tsx
 │   │       └── MultilingualSupport.tsx
 │   ├── image
-│   │   ├── ImageShimer.tsx
-│   │   └── svgFromText.ts
+│   │   ├── ImageGallery.tsx
+│   │   ├── ImageGalleryClient.tsx
+│   │   └── ImageShimer.tsx
 │   ├── layout
 │   │   ├── PageIntro.tsx
 │   │   ├── Section.tsx
@@ -105,8 +147,10 @@ app
 │   │   │   ├── Footer.tsx
 │   │   │   ├── GetInTouch.tsx
 │   │   │   ├── OrganisationInfo.tsx
+│   │   │   ├── PoweredBy.tsx
 │   │   │   ├── PoweredByKateb.tsx
 │   │   │   ├── QuickLinks.tsx
+│   │   │   ├── ServicesLinks.tsx
 │   │   │   └── SocialLinks.tsx
 │   │   └── navbar
 │   │       ├── NavLinks.tsx
@@ -122,55 +166,14 @@ app
 │   │   └── paragraph.tsx
 │   └── utils
 │       └── Delayed.tsx
-├── about-us
-│   ├── _ui
-│   │   ├── AboutTextSections.tsx
-│   │   ├── AboutValues.tsx
-│   │   └── TeamGrid.tsx
-│   └── page.tsx
-├── contact-us
-│   ├── _lib
-│   │   ├── action.ts
-│   │   ├── constant.ts
-│   │   ├── handleEnquiryEmail.ts
-│   │   └── schema.ts
-│   ├── _ui
-│   │   ├── ContactDetails.tsx
-│   │   ├── ContactFAQ.tsx
-│   │   ├── ContactForm.tsx
-│   │   ├── ContactIntro.tsx
-│   │   ├── ContactMap.tsx
-│   │   ├── ContactSuccess.tsx
-│   │   ├── OpeningHours.tsx
-│   │   └── ServiceArea.tsx
-│   └── page.tsx
 ├── error.tsx
 ├── favicon.ico
-├── free-consultation
-│   └── page.tsx
 ├── globals.css
-├── languages
-│   └── [otherLangs]
-│       ├── _ui
-│       │   └── SubcategoriesOtherLangs.tsx
-│       └── page.tsx
 ├── layout.tsx
 ├── loading.tsx
 ├── manifest.ts
 ├── not-found.tsx
-├── page.tsx
 ├── robots.ts
-├── services
-│   ├── [slug]
-│   │   ├── _ui
-│   │   │   ├── ServiceDetails.tsx
-│   │   │   ├── ServiceLeafCard.tsx
-│   │   │   ├── ServiceLeafCardSkeleton.tsx
-│   │   │   └── ServiceLeafImage.tsx
-│   │   └── page.tsx
-│   ├── _ui
-│   │   └── ServicesHero.tsx
-│   └── page.tsx
 └── sitemap.ts
 
-48 directories, 125 files
+50 directories, 127 files
