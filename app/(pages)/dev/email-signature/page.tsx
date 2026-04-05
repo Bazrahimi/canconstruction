@@ -1,3 +1,4 @@
+// app/(pages)/dev/email-signature.
 import { ABOUT_TEAM, ORG_PROFILE, SOCIAL_MEDIA } from "@/app/_lib/org/profile";
 import { publicAssets } from "@/app/_lib/org/publicAssets";
 
