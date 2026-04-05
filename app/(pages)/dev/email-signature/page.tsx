@@ -2,7 +2,6 @@
 import { ABOUT_TEAM, ORG_PROFILE, SOCIAL_MEDIA } from "@/app/_lib/org/profile";
 import { publicAssets } from "@/app/_lib/org/publicAssets";
 
-import { notFound } from "next/navigation";
 import SignatureCard from "./_ui/SignatureCard";
 
 const website = `https://www.${ORG_PROFILE.domain}`;
@@ -32,10 +31,6 @@ export const getSocialLinks = () => {
 };
 
 export default function SignaturePage() {
-  if (process.env.NODE_ENV !== "development") {
-    notFound();
-  }
-
   return (
     <main className="min-h-screen bg-gray-100 px-6 py-12">
       <SignatureCard
