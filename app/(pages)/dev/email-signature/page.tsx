@@ -1,6 +1,10 @@
 import { ABOUT_TEAM, ORG_PROFILE, SOCIAL_MEDIA } from "@/app/_lib/org/profile";
 import { publicAssets } from "@/app/_lib/org/publicAssets";
-import { buildEmailSignature, SignatureCard } from "@katebtech/framework";
+
+import {
+  buildEmailSignature,
+  SignatureCard,
+} from "@katebtech/framework/devtools";
 
 const website = `https://www.${ORG_PROFILE.domain}`;
 

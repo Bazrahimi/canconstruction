@@ -3,10 +3,15 @@
 import { serverEnv } from "@/app/_lib/env/server";
 import { getBaseUrl, ORG_PROFILE as op } from "@/app/_lib/org/profile";
 import { publicAssets } from "@/app/_lib/org/publicAssets";
-import { toActionErrors } from "@katebtech/framework/dist/_lib/utils/actionHelper";
-import type { OrgInfo } from "@katebtech/framework/dist/emails/contact/handleEnquiryEmail";
-import { handleEnquiryEmails } from "@katebtech/framework/dist/emails/contact/handleEnquiryEmail";
-import { EnquiryForm, EnquirySchema, EnquiryState } from "@katebtech/framework/dist/emails/contact/schema";
+import { toActionErrors } from "@katebtech/framework";
+import type { OrgInfo } from "@katebtech/framework/contact-us";
+import { sendEnquiryEmails } from "@katebtech/framework/emails";
+
+import type {
+  EnquiryForm,
+  EnquiryState,
+} from "@katebtech/framework/contact-us";
+import { enquirySchema } from "@katebtech/framework/contact-us";
 
 const resendApiKey = serverEnv.resendApiKey;
 const orgInfo: OrgInfo = {
@@ -30,7 +35,7 @@ export const submitEnquiry = async (
     ]),
   ) as Partial<EnquiryForm>;
 
-  const parsed = EnquirySchema.safeParse(rawData);
+  const parsed = enquirySchema.safeParse(rawData);
 
   if (!parsed.success) {
     return {
@@ -41,7 +46,7 @@ export const submitEnquiry = async (
 
   const enquiryData = parsed.data;
 
-  const { message } = await handleEnquiryEmails({
+  const { message } = await sendEnquiryEmails({
     enquiry: enquiryData,
     apiKey: resendApiKey,
     orgInfo: orgInfo,

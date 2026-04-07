@@ -1,4 +1,5 @@
-import { requireDev } from "@/app/_lib/utils/dev";
+
+import { requireDev } from "@katebtech/framework";
 import { ReactNode } from "react";
 
 const DevLayout = ({ children }: { children: ReactNode }) => {

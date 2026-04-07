@@ -35,6 +35,7 @@ export const ORG_PROFILE = {
   cta: "freeQuote" as CtaKey,
   primaryColor: "#1f1f1f",
   secondaryColor: "#cfa428",
+  textOnSecondary: "",
 } as const;
 
 export const ABOUT_TEAM: TeamSection = {
@@ -60,5 +61,5 @@ export const ABOUT_TEAM: TeamSection = {
 export const SOCIAL_MEDIA = {
   facebook: "",
   instagram: "",
-  tiktok: "", // leave empty or undefined if not used
+  tiktok: "", 
 } as const;
