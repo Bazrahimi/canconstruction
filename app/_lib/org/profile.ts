@@ -58,7 +58,7 @@ export const ABOUT_TEAM: TeamSection = {
 } as const;
 
 export const SOCIAL_MEDIA = {
-  facebook: "faceboo.com",
-  instagram: "tiktok.com",
+  facebook: "",
+  instagram: "",
   tiktok: "", // leave empty or undefined if not used
 } as const;

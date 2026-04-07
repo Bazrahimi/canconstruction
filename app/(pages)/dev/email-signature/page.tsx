@@ -1,9 +1,6 @@
 import { ABOUT_TEAM, ORG_PROFILE, SOCIAL_MEDIA } from "@/app/_lib/org/profile";
 import { publicAssets } from "@/app/_lib/org/publicAssets";
-import {
-  buildEmailSignature,
-  SignatureCard,
-} from "@katebtech/framework";
+import { buildEmailSignature, SignatureCard } from "@katebtech/framework";
 
 const website = `https://www.${ORG_PROFILE.domain}`;
 
@@ -32,3 +29,22 @@ export default function SignaturePage() {
     </main>
   );
 }
+
+// export default function SignaturePage() {
+//   const { signature, socialLinks } = buildEmailSignature({
+//     personName: "Liaquat Ali",
+//     role:  "Treasurer",
+//     companyName: "Hazara Cultural Association",
+//     phone: "0420 910 786",
+//     email: "liaquat@hazara.org.au",
+//     address: "35 Westpool Dr, Hallam VIC 3803",
+//     website: "https://www.hazara.org.au",
+//     logoUrl: `https://res.cloudinary.com/drvh5xeuw/image/upload/v1763895306/hca/website/hca-logo_i4xgc6.png`,
+//     primaryColor: ORG_PROFILE.primaryColor,
+//     secondaryColor: ORG_PROFILE.secondaryColor,
+//     socialMedia: {
+//       facebook: "https://www.facebook.com/profile.php?id=61557919424367",
+//       instagram: "https://www.instagram.com/hazaraculturalassociation/",
+
+//     },
+//   });
