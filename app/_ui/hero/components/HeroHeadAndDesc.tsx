@@ -18,7 +18,7 @@ export const HeroHeadAndDesc = ({
 
   return (
     < >
-      <Header as="h1" >
+      <Header as="h1" className="text-yellow-600">
         {orgName}
       </Header>
       {showFarsiName && orgNameFarsi && (
