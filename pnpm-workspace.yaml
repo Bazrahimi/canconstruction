@@ -1,0 +1,7 @@
+packages:
+  - .
+
+onlyBuiltDependencies:
+  - "@katebtech/core"
+  - "@katebtech/emails"
+  - "@katebtech/layout"

@@ -15,7 +15,7 @@ export const publicAssets = {
 
 export const cldImages = {
   hero: {
-    url: "v1774340276/business-f/building/rendering/exerior-view-house_egkk1f.png",
+    url: "v1776385760/business-f/building/painting/zia_hero_gdnmbp.png",
     alt: "",
   } as ImageMeta,
   services: {
