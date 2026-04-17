@@ -1,23 +1,16 @@
 "use server";
-
-import { serverEnv } from "@/app/_lib/env/server";
+import { toActionErrors } from "@katebtech/core";
+import { sendEnquiryEmails } from "@katebtech/emails/contact-us/1";
+import { EnquiryForm, EnquirySchema, EnquiryState } from "./schema";
 import { getBaseUrl, ORG_PROFILE as op } from "@/app/_lib/org/profile";
 import { publicAssets } from "@/app/_lib/org/publicAssets";
-import { toActionErrors } from "@katebtech/framework";
-import type { OrgInfo } from "@katebtech/framework/contact-us";
-import { sendEnquiryEmails } from "@katebtech/framework/emails";
-
-import type {
-  EnquiryForm,
-  EnquiryState,
-} from "@katebtech/framework/contact-us";
-import { enquirySchema } from "@katebtech/framework/contact-us";
+import { serverEnv } from "@/app/_lib/env/server";
 
 const resendApiKey = serverEnv.resendApiKey;
-const orgInfo: OrgInfo = {
+const orgInfo = {
   email: op.email,
   name: op.orgName,
-  orgNameFarsi: op.orgNameFarsi,
+  orgNameFarsi: op.orgNameHz,
   phone: op.phone,
   address: op.address,
   website: `https://${op.domain}`,
@@ -35,7 +28,7 @@ export const submitEnquiry = async (
     ]),
   ) as Partial<EnquiryForm>;
 
-  const parsed = enquirySchema.safeParse(rawData);
+  const parsed = EnquirySchema.safeParse(rawData);
 
   if (!parsed.success) {
     return {
@@ -43,8 +36,7 @@ export const submitEnquiry = async (
       data: rawData,
     };
   }
-
-  const enquiryData = parsed.data;
+ const enquiryData = parsed.data;
 
   const { message } = await sendEnquiryEmails({
     enquiry: enquiryData,

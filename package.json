@@ -9,7 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@katebtech/framework": "github:Bazrahimi/katebtech-framework#main",
+        "@katebtech/core": "github:Bazrahimi/katebtech-core#main",
+    "@katebtech/emails": "github:Bazrahimi/katebtech-emails#main",
+    "@katebtech/layout": "github:Bazrahimi/katebtech-layout#main",
 
     "@react-email/components": "^1.0.7",
     "clsx": "^2.1.1",

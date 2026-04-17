@@ -29,7 +29,7 @@ const OtherLanguagePage = async ({
           <div key={lang}>
             <PageIntro
               heading={lang === "HZ" ? ol[lang].label.HZ : ol[lang].label.FA}
-              subHeading={ol[lang].statement(op.orgNameFarsi)}
+              subHeading={ol[lang].statement(op.orgNameHz)}
               isRtl
             />
           </div>

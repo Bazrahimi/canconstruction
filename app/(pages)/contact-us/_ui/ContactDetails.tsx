@@ -17,7 +17,7 @@ const ContactDetails = () => {
     email,
     address,
     otherLangKeys,
-    orgNameFarsi,
+    orgNameHz,
   } = ORG_PROFILE;
 
 
@@ -98,7 +98,7 @@ const ContactDetails = () => {
       {otherLangKeys.length && (
         <MultiLanguageCapacity
           otherLangKeys={otherLangKeys}
-          orgNameFarsi={orgNameFarsi}
+          orgNameFarsi={orgNameHz}
         />
       )}
 

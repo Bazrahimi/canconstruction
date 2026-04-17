@@ -56,7 +56,7 @@ export default function HomeHero({ className }: Props) {
             <div className="space-y-5 rounded-3xl border border-white/10 backdrop-blur-md bg-white/10 sm:p-7">
               <HeroHeadAndDesc
                 orgName={op.orgName}
-                orgNameFarsi={op.orgNameFarsi}
+                orgNameFarsi={op.orgNameHz}
                 otherLangKeys={op.otherLangKeys}
                 description={op.description}
               />

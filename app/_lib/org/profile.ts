@@ -20,7 +20,7 @@ export const getBaseUrl = (): string => {
 
 export const ORG_PROFILE = {
   orgName: orgName,
-  orgNameFarsi: "",
+  orgNameHz: "",
   industry: ORG_INDUSTRY_SECTORS.BUILDING.industry,
   subSector: ORG_INDUSTRY_SECTORS.BUILDING.Sectors.painting,
   description:

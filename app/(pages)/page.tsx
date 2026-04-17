@@ -31,7 +31,7 @@ export default function HomePage() {
         <div>
           <MultiLanguageCapacity
             otherLangKeys={op.otherLangKeys}
-            orgNameFarsi={op.orgNameFarsi}
+            orgNameFarsi={op.orgNameHz}
           />
           <OtherLanguagesSnapshot />
         </div>

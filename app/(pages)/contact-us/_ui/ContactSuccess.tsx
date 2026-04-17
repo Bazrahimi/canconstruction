@@ -21,7 +21,7 @@ export function ContactSuccessMessage({ onReset }: ContactSuccessMessageProps) {
       </P>
 
       <P className="text-gray-700">
-        تشکر. که قد مو <strong>{ORG_PROFILE.orgNameFarsi}</strong> تماس گرفتین.
+        تشکر. که قد مو <strong>{ORG_PROFILE.orgNameHz}</strong> تماس گرفتین.
         پیام شما به ما رسید، در اولین فرصت جواب می‌دیم.
       </P>
 

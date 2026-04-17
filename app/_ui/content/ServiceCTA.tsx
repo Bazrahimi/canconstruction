@@ -44,7 +44,7 @@ export default function ServiceCTA({
   const callout =
     resolvedServiceLabel.trim().length > 0
       ? locale === "fa"
-        ? ctaCallFarsi(ORG_PROFILE.orgNameFarsi, resolvedServiceLabel)
+        ? ctaCallFarsi(ORG_PROFILE.orgNameHz, resolvedServiceLabel)
         : ctaCall(ORG_PROFILE.orgName, resolvedServiceLabel)
       : "";
 

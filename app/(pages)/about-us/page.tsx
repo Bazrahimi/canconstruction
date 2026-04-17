@@ -50,7 +50,7 @@ export default function AboutUsPage() {
         <div className="bg-org-secondary-main/15">
           <MultiLanguageCapacity
             otherLangKeys={op.otherLangKeys}
-            orgNameFarsi={op.orgNameFarsi}
+            orgNameFarsi={op.orgNameHz}
           />
         </div>
       ) : null}
