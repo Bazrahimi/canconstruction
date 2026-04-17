@@ -30,7 +30,7 @@ export const ORG_PROFILE = {
   domain: ORG_DOMAIN,
   email: `info@${ORG_DOMAIN}`,
   phone: "0404 148 009",
-  address: "2 Faldo Place, Cranbourne VIC 3977",
+  address: " Cranbourne VIC 3977",
   abn: "37 649 729 395",
   cta: "freeQuote" as CtaKey,
   primaryColor: "#1f1f1f",
@@ -60,6 +60,6 @@ export const ABOUT_TEAM: TeamSection = {
 
 export const SOCIAL_MEDIA = {
   facebook: "",
-  instagram: "",
+  instagram: "https://www.instagram.com/canconstruction12/",
   tiktok: "", 
 } as const;
